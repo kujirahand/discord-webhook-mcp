@@ -34,7 +34,7 @@ Discord Webhook URLは以下のいずれかの方法で設定できます。
 
 ```sh
 codex mcp add discord-webhook \
-    npx -y @kujirahand/discord-webhook-mcp \
+    -- npx -y @kujirahand/discord-webhook-mcp \
     --url=https://discord.com/api/webhooks/xxxxx
 ```
 
@@ -42,7 +42,7 @@ codex mcp add discord-webhook \
 
 ```sh
 claude mcp add discord-webhook \
-    @kujirahand/discord-webhook-mcp \
+    -- npx -y @kujirahand/discord-webhook-mcp \
     --url=https://discord.com/api/webhooks/xxxxx
 ```
 

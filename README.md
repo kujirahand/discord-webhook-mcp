@@ -39,7 +39,7 @@ Use the following steps to install the server to your AI agent of choice.
 
 ```sh
 codex mcp add discord-webhook \
-    npx -y @kujirahand/discord-webhook-mcp \
+    -- npx -y @kujirahand/discord-webhook-mcp \
     --url=https://discord.com/api/webhooks/xxxxx
 ```
 
@@ -47,7 +47,7 @@ codex mcp add discord-webhook \
 
 ```sh
 claude mcp add discord-webhook \
-    @kujirahand/discord-webhook-mcp \
+    -- npx -y @kujirahand/discord-webhook-mcp \
     --url=https://discord.com/api/webhooks/xxxxx
 ```
 
@@ -85,3 +85,4 @@ Uploads an image file to the Discord channel.
   - `message` (string, optional): Accompanying text message.
   - `username` (string, optional): Override the webhook bot's username.
   - `avatar_url` (string, optional): Override the webhook bot's avatar.
+
