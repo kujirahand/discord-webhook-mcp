@@ -15,8 +15,6 @@ Here are the steps to obtain a Discord Webhook URL:
 * Open **"Webhooks"**.
 * Click **"New Webhook"** or **"Create Webhook"**.
 * Set a name for the Webhook.
-  * Example: `MCP Notification`
-  * Example: `Discord Webhook MCP`
 * Verify that the posting channel is correct.
 * Set an icon image if necessary.
 * Click **"Copy Webhook URL"**.
