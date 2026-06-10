@@ -47,6 +47,33 @@ describe("Discord Webhook MCP Server Tests", () => {
         /DISCORD_WEBHOOK_URL environment variable is not set/
       );
     });
+
+    test("should successfully use --url=URL command line argument if env var is missing", async () => {
+      process.argv.push("--url=https://discord.com/api/webhooks/argv-equals-url");
+      try {
+        const result = await handleCallTool("send_message", { message: "Hello from argv!" }, {});
+        assert.deepEqual(result, {
+          content: [{ type: "text", text: "Message successfully sent to Discord." }]
+        });
+        assert.strictEqual(lastFetchUrl, "https://discord.com/api/webhooks/argv-equals-url");
+      } finally {
+        process.argv.pop();
+      }
+    });
+
+    test("should successfully use --url URL command line argument if env var is missing", async () => {
+      process.argv.push("--url", "https://discord.com/api/webhooks/argv-space-url");
+      try {
+        const result = await handleCallTool("send_message", { message: "Hello from argv!" }, {});
+        assert.deepEqual(result, {
+          content: [{ type: "text", text: "Message successfully sent to Discord." }]
+        });
+        assert.strictEqual(lastFetchUrl, "https://discord.com/api/webhooks/argv-space-url");
+      } finally {
+        process.argv.pop();
+        process.argv.pop();
+      }
+    });
   });
 
   describe("send_message tool", () => {

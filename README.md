@@ -25,6 +25,12 @@ Here are the steps to obtain a Discord Webhook URL:
 > [!WARNING]
 > Webhook URLs are sensitive secrets. Do not publish them or make them publicly accessible.
 
+## Setup
+
+You can configure the Discord Webhook URL in one of two ways:
+1. Set the `DISCORD_WEBHOOK_URL` environment variable.
+2. Pass it as a command-line argument using `--url=YOUR_WEBHOOK_URL` (or `--url YOUR_WEBHOOK_URL`).
+
 ## AI Agent Installation
 
 Use the following steps to install the server to your AI agent of choice.
@@ -34,7 +40,7 @@ Use the following steps to install the server to your AI agent of choice.
 ```sh
 codex mcp add discord-webhook \
     npx -y @kujirahand/discord-webhook-mcp \
-    --env DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/xxxxx
+    --url=https://discord.com/api/webhooks/xxxxx
 ```
 
 ### Install to Claude Code
@@ -42,7 +48,7 @@ codex mcp add discord-webhook \
 ```sh
 claude mcp add discord-webhook \
     @kujirahand/discord-webhook-mcp \
-    --env DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/xxxxx
+    --url=https://discord.com/api/webhooks/xxxxx
 ```
 
 ### Install to Antigravity CLI

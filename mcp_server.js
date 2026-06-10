@@ -129,7 +129,23 @@ async function handleSendImage(args, webhookUrl) {
  * Extracted into a helper function to allow easy unit testing.
  */
 export async function handleCallTool(name, args, env = process.env) {
-  const webhookUrl = env.DISCORD_WEBHOOK_URL;
+  let webhookUrl = env.DISCORD_WEBHOOK_URL;
+
+  // If environment variable is not set, try command-line arguments
+  if (!webhookUrl && typeof process !== "undefined" && process.argv) {
+    for (let i = 2; i < process.argv.length; i++) {
+      const arg = process.argv[i];
+      if (arg.startsWith("--url=")) {
+        webhookUrl = arg.slice(6);
+        break;
+      }
+      if (arg === "--url" && i + 1 < process.argv.length) {
+        webhookUrl = process.argv[i + 1];
+        break;
+      }
+    }
+  }
+
   if (!webhookUrl) {
     throw new Error("DISCORD_WEBHOOK_URL environment variable is not set.");
   }

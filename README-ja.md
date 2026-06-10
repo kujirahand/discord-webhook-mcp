@@ -20,6 +20,12 @@ DiscordのWebhook URLを取得する手順です。
 
 注意点として、**Webhook URLは秘密情報**なので公開しないでください。
 
+## セットアップ
+
+Discord Webhook URLは以下のいずれかの方法で設定できます。
+1. `DISCORD_WEBHOOK_URL` 環境変数を設定する。
+2. コマンドライン引数 `--url=WebhookのURL` (または `--url WebhookのURL`) を指定する。
+
 ## AIエージェントへのインストール
 
 次の手順でAIエージェントにインストールします。
@@ -29,7 +35,7 @@ DiscordのWebhook URLを取得する手順です。
 ```sh
 codex mcp add discord-webhook \
     npx -y @kujirahand/discord-webhook-mcp \
-    --env DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/xxxxx
+    --url=https://discord.com/api/webhooks/xxxxx
 ```
 
 ### Install to Claude Code
@@ -37,7 +43,7 @@ codex mcp add discord-webhook \
 ```sh
 claude mcp add discord-webhook \
     @kujirahand/discord-webhook-mcp \
-    --env DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/xxxxx
+    --url=https://discord.com/api/webhooks/xxxxx
 ```
 
 ### Install to Antigravity CLI
