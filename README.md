@@ -1,6 +1,8 @@
 # discord-webhook-mcp
 
-MCP Server for Discord webhook
+An MCP server to send notifications from AI agents to Discord via Discord webhooks.
+
+- [日本語のマニュアル](https://github.com/kujirahand/discord-webhook-mcp/blob/main/README-ja.md)
 
 ## How to Get Discord Webhook URL
 

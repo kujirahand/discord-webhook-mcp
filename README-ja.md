@@ -1,6 +1,6 @@
 # discord-webhook-mcp
 
-MCP Server for Discord webhook
+これは、Discordのウェブフックを利用して、AIエージェントからDiscordに通知を送信するMCPサーバーです。
 
 ## WebHookのURLの取得方法
 
