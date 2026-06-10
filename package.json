@@ -1,0 +1,39 @@
+{
+  "name": "@kujirahand/discord-webhook-mcp",
+  "version": "1.0.0",
+  "description": "MCP Server for Discord webhook",
+  "main": "mcp_server.js",
+  "bin": {
+    "discord-webhook-mcp": "./mcp_server.js"
+  },
+  "files": [
+    "mcp_server.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kujirahand/discord-webhook-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "discord",
+    "webhook"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kujirahand/discord-webhook-mcp/issues"
+  },
+  "homepage": "https://github.com/kujirahand/discord-webhook-mcp#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  }
+}
