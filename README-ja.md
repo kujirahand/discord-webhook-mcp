@@ -2,30 +2,27 @@
 
 MCP Server for Discord webhook
 
-## How to Get Discord Webhook URL
+## WebHookのURLの取得方法
 
-Here are the steps to obtain a Discord Webhook URL:
+DiscordのWebhook URLを取得する手順です。
 
-* Open the target **server** in Discord.
-* Choose the **text channel** where you want to send webhooks.
-* Click the gear icon next to the channel name, or right-click the channel, to open **"Edit Channel"**.
-* Select **"Integrations"** from the left menu.
-* Open **"Webhooks"**.
-* Click **"New Webhook"** or **"Create Webhook"**.
-* Set a name for the Webhook.
-  * Example: `MCP Notification`
-  * Example: `Discord Webhook MCP`
-* Verify that the posting channel is correct.
-* Set an icon image if necessary.
-* Click **"Copy Webhook URL"**.
-* Click **"Save Changes"**.
+* Discordで対象の**サーバー**を開く
+* Webhookを送信したい**テキストチャンネル**を選ぶ
+* チャンネル名の右側にある歯車アイコン、または右クリックから**「チャンネルの編集」**を開く
+* 左メニューから**「連携サービス」**を開く
+* **「Webhook」**を開く
+* **「新しいWebhook」**または**「Webhookを作成」**を押す
+* Webhookの名前を設定する
+* 投稿先チャンネルが正しいか確認する
+* 必要ならアイコン画像も設定する
+* **「Webhook URLをコピー」**を押す
+* **「変更を保存」**を押す
 
-> [!WARNING]
-> Webhook URLs are sensitive secrets. Do not publish them or make them publicly accessible.
+注意点として、**Webhook URLは秘密情報**なので公開しないでください。
 
-## AI Agent Installation
+## AIエージェントへのインストール
 
-Use the following steps to install the server to your AI agent of choice.
+次の手順でAIエージェントにインストールします。
 
 ### Install to Codex CLI
 
@@ -45,7 +42,7 @@ claude mcp add discord-webhook \
 
 ### Install to Antigravity CLI
 
-Add the following configuration to your `~/.gemini/config/mcp_config.json` file:
+Please write following configuration file `~/.gemini/config/mcp_config.json`
 
 ```json
 {
@@ -77,3 +74,5 @@ Uploads an image file to the Discord channel.
   - `message` (string, optional): Accompanying text message.
   - `username` (string, optional): Override the webhook bot's username.
   - `avatar_url` (string, optional): Override the webhook bot's avatar.
+
+

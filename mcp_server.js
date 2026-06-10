@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { realpathSync } from "node:fs";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
@@ -235,10 +236,16 @@ async function main() {
   console.error("Discord Webhook MCP Server running on stdio");
 }
 
-const isMain = process.argv[1] && (
-  process.argv[1] === fileURLToPath(import.meta.url) ||
-  process.argv[1].endsWith("mcp_server.js")
-);
+let realArgv1 = "";
+try {
+  realArgv1 = process.argv[1] ? realpathSync(process.argv[1]) : "";
+} catch (e) {
+  // Ignore errors if the file doesn't exist
+}
+
+const isMain =
+  realArgv1 === fileURLToPath(import.meta.url) ||
+  (process.argv[1] && process.argv[1].endsWith("mcp_server.js"));
 
 if (isMain) {
   main().catch((error) => {
