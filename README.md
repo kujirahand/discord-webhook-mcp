@@ -49,6 +49,25 @@ claude mcp add discord-webhook \
     --url=https://discord.com/api/webhooks/xxxxx
 ```
 
+### Install to Clude Desktop
+
+Edit the `claude_desktop_config.json` file and add the following configuration:
+
+```json
+{
+  "mcpServers": {
+    "discord-webhook": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@kujirahand/discord-webhook-mcp",
+        "--url=https://discord.com/api/webhooks/xxxxx"
+      ]
+    }
+  }
+}
+```
+
 ### Install to Antigravity CLI
 
 Add the following configuration to your `~/.gemini/config/mcp_config.json` file:

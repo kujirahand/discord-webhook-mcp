@@ -28,7 +28,7 @@ Discord Webhook URLは以下のいずれかの方法で設定できます。
 
 ## AIエージェントへのインストール
 
-次の手順でAIエージェントにインストールします。
+次の手順でAIエージェントにインストールします。なお、以下の「--url=https://discord.com/api/webhooks/xxxxx」の部分は、取得したWebhook URLに置き換えてください。
 
 ### Install to Codex CLI
 
@@ -44,6 +44,25 @@ codex mcp add discord-webhook \
 claude mcp add discord-webhook \
     -- npx -y @kujirahand/discord-webhook-mcp \
     --url=https://discord.com/api/webhooks/xxxxx
+```
+
+### Install to Clude Desktop
+
+設定から、ローカルMCP設定ファイルの `claude_desktop_config.json`に、以下の設定を追加してください。
+
+```json
+{
+  "mcpServers": {
+    "discord-webhook": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@kujirahand/discord-webhook-mcp",
+        "--url=https://discord.com/api/webhooks/xxxxx"
+      ]
+    }
+  }
+}
 ```
 
 ### Install to Antigravity CLI
